@@ -1,0 +1,103 @@
+{
+  "project": {
+    "class": "M",
+    "standard": "IEC/IEEE 60255-118-1",
+    "f0": 50.0,
+    "report_rate": 100,
+    "absolute_start_time": "2026-02-19T12:00:00+00:00"
+  },
+  "scaling": {
+    "voltage": {
+      "Vrms_nominal": 0.4,
+      "max_peak": 1.2
+    },
+    "current": {
+      "Irms_nominal": 0.4,
+      "max_peak": 1.2,
+      "neutral_from_sum": true
+    }
+  },
+  "timebase": {
+    "sample_rate_nominal": 8000.0,
+    "ppm_initial": 10,
+    "ppm_per_year": 10,
+    "jitter_sigma_ns": 40
+  },
+  "steady_state": {
+    "enabled": true,
+    "duration_sec": 1.2,
+    "frequency_values": [
+      45.0,
+      50.0,
+      55.0
+    ],
+    "voltage_pu_values": [
+      0.1,
+      1.0,
+      1.2
+    ],
+    "current_pu_values": [
+      0.1,
+      1.0,
+      2.0
+    ],
+    "power_factor_deg": {
+      "Ia": 30,
+      "Ib": 0,
+      "Ic": 0
+    },
+    "harmonics": [
+      {
+        "order": 5,
+        "ratio": 0.10,
+        "sequence": "negative"
+      }
+    ],
+    "oob": [
+      {
+        "frequency": 120.0,
+        "ratio": 0.10
+      }
+    ]
+  },
+  "ramp_test": {
+    "enabled": true,
+    "warmup_sec": 1.2,
+    "range_hz": [
+      45.0,
+      55.0
+    ],
+    "ramp_rate_hz_per_s": [
+      1.0
+    ]
+  },
+  "modulation_test": {
+    "enabled": true,
+    "warmup_sec": 1.2,
+    "duration_sec": 2.0,
+    "amplitude_modulation": {
+      "kx": 0.1,
+      "fm_values_hz": [
+        0.1,
+        1.0,
+        2.0,
+        5.0
+      ]
+    },
+    "phase_modulation": {
+      "ka_rad": 0.1,
+      "fm_values_hz": [
+        0.1,
+        1.0,
+        2.0,
+        5.0
+      ]
+    }
+  },
+  "step_test": {
+    "enabled": true,
+    "warmup_sec": 1.2,
+    "amplitude_step_pu": 0.1,
+    "phase_step_rad": 0.174533
+  }
+}
